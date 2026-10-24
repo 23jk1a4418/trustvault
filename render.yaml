@@ -1,0 +1,31 @@
+databases:
+  - name: trustvault-db
+    databaseName: trustvault
+    user: trustvault
+    plan: free
+
+services:
+  - type: web
+    name: trustvault
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: trustvault-db
+          property: connectionString
+      - key: DATABASE_USER
+        fromDatabase:
+          name: trustvault-db
+          property: user
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: trustvault-db
+          property: password
+      - key: SEED_DEMO
+        value: "true"
+      - key: STORAGE_DIR
+        value: /app/uploads

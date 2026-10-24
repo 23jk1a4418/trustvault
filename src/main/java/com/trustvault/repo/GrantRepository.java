@@ -1,0 +1,3 @@
+package com.trustvault.repo;
+import com.trustvault.model.DocumentGrant; import org.springframework.data.jpa.repository.JpaRepository; import org.springframework.transaction.annotation.Transactional; import java.util.*;
+public interface GrantRepository extends JpaRepository<DocumentGrant,UUID>{Optional<DocumentGrant> findByDocumentIdAndUsername(UUID documentId,String username); List<DocumentGrant> findByDocumentId(UUID documentId); List<DocumentGrant> findByUsername(String username); @Transactional void deleteByDocumentIdAndUsername(UUID documentId,String username); @Transactional void deleteByDocumentId(UUID documentId);}

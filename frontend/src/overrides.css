@@ -1,0 +1,84 @@
+/* Small layout corrections kept separate from the base component styles. */
+.page {
+  width: min(1320px, 100%);
+}
+
+.page-head {
+  gap: 24px;
+}
+
+.page-head > div {
+  min-width: 0;
+}
+
+.page-head .primary {
+  flex: 0 0 auto;
+}
+
+.table-card {
+  width: 100%;
+}
+
+.table-head,
+.doc-row {
+  grid-template-columns:
+    minmax(210px, 2.2fr)
+    minmax(100px, 1fr)
+    minmax(100px, 1fr)
+    minmax(105px, 1fr)
+    minmax(100px, 1fr)
+    92px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #7fc3df;
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .table-head,
+  .doc-row {
+    grid-template-columns: minmax(150px, 2fr) minmax(85px, 1fr) minmax(85px, 1fr) 74px;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-head .primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .filter {
+    flex: 1;
+  }
+
+  .table-card {
+    overflow-x: auto;
+  }
+
+  .table-head,
+  .doc-row {
+    min-width: 450px;
+  }
+
+  .table-foot {
+    min-width: 450px;
+  }
+}

@@ -1,0 +1,12 @@
+.git
+.m2
+.maven-cache
+data
+target
+uploads
+frontend/node_modules
+frontend/dist
+*.log
+*.trace.db
+*.mv.db
+.env

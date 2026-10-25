@@ -1,0 +1,11 @@
+# Node.js dependencies and generated frontend output
+frontend/node_modules/
+frontend/dist/
+
+# Java build output
+target/
+
+# Local database files
+data/*.db
+data/*.mv.db
+data/*.lock.db
